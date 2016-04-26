@@ -1,0 +1,145 @@
+/*******************************************
+FONTS
+*******************************************/
+@import url(https://fonts.googleapis.com/css?family=Abel);
+
+body {    
+    background: #ededed;
+}
+
+.control-box a {
+    color: #EC7263;
+	-webkit-transition: all 150ms ease;
+	-moz-transition: all 150ms ease;
+	-ms-transition: all 150ms ease;
+	-o-transition: all 150ms ease;
+	transition: all 150ms ease; 
+	}
+    a:hover {
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)"; /* IE 8 */
+        filter: alpha(opacity=90); /* IE7 */
+        opacity: 0.9;
+        text-decoration: none;
+        color: #EC7263;
+    }
+
+
+/* Container */
+.container-fluid {
+    background: #FFFFFF;
+    margin: 40px auto 10px;
+    padding: 20px 40px 0;
+    max-width: 90%;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Thumbnail Box */
+.caption h4 {
+    font-size: 1rem;
+    color: #444;
+    }
+    .caption p {
+        font-size: 0.75rem;
+        color: #999;
+        }
+        .btn.btn-mini {
+            font-size: 0.63rem;
+            }
+
+
+/* Carousel Control */
+.control-box {
+    text-align: center;
+    width: 100%;
+    }
+.carousel-control{
+    background: none;
+    display: inline-block;
+    font-size: 2em;
+    padding: 4px 10px 0px;
+    position: static;
+    }
+.carousel-control.right, .carousel-control.left {
+    background-image: none!important;    
+}
+
+.carousel h1, .carousel h3, .carousel a {
+    font-family: 'Abel', 'Open Sans', Arial, Tahoma;
+    color: #363636;
+}
+.carousel h1 {
+    font-size: 1.8em;
+    font-weight: 700;
+    line-height: normal;
+    color: #EC7263;
+    text-transform: uppercase;
+}
+.carousel h3 {
+    font-weight: 200;
+    font-size: 1.3em;
+    line-height: 1.5em;
+}
+.caption a {    
+    color: #EC7263;
+}
+.thumbnail {
+    border: 0;
+    box-shadow: none;
+}
+.item ul {
+    display: inline;
+    width: 100%;
+}
+.item ul li {
+    float: left;
+    width: 30%;
+    list-style: none;
+    margin: 0 0.8em;
+}
+
+.header:after {
+    width: 100%;
+    height: 3px;
+    background: url(../img/line.png);
+    margin-top: 15px;
+    content: '';
+    display: block;
+    margin-bottom: 2em;
+}
+.header {
+    font-size: 2em;
+    letter-spacing: -1px;
+    line-height: 2em;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-family: 'Abel', 'Open Sans', Arial, Tahoma;
+    text-align: center;
+}
+.carousel-control:focus, .carousel-control:hover {
+    color: #000000;
+}
+.back a {
+    text-transform: uppercase;
+    font-family: 'Abel', 'Open Sans', Arial, Tahoma;
+    color: #000000;
+}
+
+
+/* Mobile Only */
+@media (max-width: 767px) {
+    .page-header, .control-box {
+    text-align: center;
+    } 
+    .item ul li {
+    width: 90%;
+    }
+}
+@media (max-width: 479px) {
+    .caption {
+    word-break: break-all;
+    }
+    .item ul li {
+    width: 90%;
+    }
+}

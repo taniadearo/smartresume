@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Resume - Tania Dearo Ploennes</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/font-awesome.css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">   
+        <link rel="icon" type="image/png" href="img/favicon.png" />
+        
+        
+        <!--[if lt IE 9]>
+        <script src="js/html5shiv.js"></script>
+        <script src="js/respond.min.js"></script>
+        <![endif]-->              
+    </head>
+    <body>
+        <div id="myCV" ng-app="myApp" ng-controller="mainController" class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <ul id="langmenu" class="langmenu">
+                        <li ng-click="english();" class="active">English</li>
+                        <li ng-click="portuguese();">Português</li>
+                        <li ng-click="spanish();">Español</li>
+                    </ul>
+                </div>                
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div id="photo-header" class="text-center">
+                        <!-- PHOTO (AVATAR) -->
+                        <div id="photo">
+                            <img src="img/avatar.jpg" alt="avatar">
+                        </div>
+                        <div id="text-header">
+                            <h1>{{ intro }} <br> {{ intro1 }} <span>{{ name }}</span>. {{ intro2 }}</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-7">
+                  <!-- ABOUT ME -->
+                    <div class="box">
+                        <h2>{{ titAboutme }}</h2>
+                        <p>{{ aboutme }}</p>
+                    </div>
+                    <!-- WORKS -->
+                    <div class="box">
+                        <h2>{{ titWorks }}</h2>
+                        <p>{{ works }} <a class="work_arrow" href="/works.htm">{{ wlink }}</a>.</p>
+                    </div>
+                  <!-- EDUCATION -->
+                    <div class="box">
+                        <h2>{{ titEducation }}</h2>
+                        <ul id="education" class="clearfix">
+                            <li ng-repeat="educ in education">
+                                <div class="year pull-left">{{ educ.year }}</div>
+                                <div class="description pull-right">
+                                    <h3>{{ educ.tit }}</h3>
+                                    <p>{{ educ.desc }}</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                  <!-- EXPERIENCES -->
+                  <div class="box">
+                    <h2>{{ titExperience }}</h2>
+                    <div class="job clearfix" ng-repeat="exp in experience">
+                      <div class="col-xs-3">
+                        <div class="where">{{ exp.place }}</div>
+                        <div class="year">{{ exp.date }}</div>
+                      </div>
+                      <div class="col-xs-9">
+                        <div class="profession">{{ exp.tit }}</div>
+                        <div class="description">{{ exp.desc }}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-5">
+                  <!-- CONTACT -->
+                      <div class="box clearfix">
+                        <h2>{{ titContact }}</h2>
+                        <div class="contact-item">
+                          <div class="icon pull-left text-center"><span class="fa fa-envelope fa-fw"></span></div>
+                          <div class="title pull-right">Email</div>
+                          <div class="description pull-right"><a href="mailto:taniaploennes@gmail.com">taniaploennes@gmail.com</a></div>
+                        </div>
+                        <div class="contact-item">
+                          <div class="icon pull-left text-center"><span class="fa fa-linkedin fa-fw"></span></div>
+                          <div class="title pull-right">Linkedin</div>
+                          <div class="description pull-right"><a target="_blank" href="http://www.linkedin.com/in/taniadearo">www.linkedin.com/in/taniadearo</a></div>
+                        </div>
+                        <div class="contact-item">
+                          <div class="icon pull-left text-center"><span class="fa fa-skype fa-fw"></span></div>
+                          <div class="title pull-right">Skype</div>
+                          <div class="description pull-right">tdearo</div>
+                        </div>
+                      </div>
+                  <!-- TECHNICAL SKILLS -->
+                        <div class="box">
+                            <h2>{{ titTskills }}</h2>
+                            <div class="skills">
+                                <div ng-repeat="tskill in tskills">
+                                    <div class="item-skills" data-percent="{{ tskill.per }}">{{ tskill.desc }}<span class="printonly"> | {{ tskill.per * 100 }}% </span></div>
+                                </div>
+                                <div class="skills-legend clearfix">
+                                    <div class="legend-left legend">Beginner</div>
+                                    <div class="legend-left legend"><span>Proficient</span></div>
+                                    <div class="legend-right legend"><span>Expert</span></div>
+                                    <div class="legend-right legend">Master</div>
+                                </div>
+                            </div>
+                        </div>
+                    <!-- SOFT SKILLS -->
+                        <div class="box">
+                            <h2>{{ titSskills }}</h2>
+                            <div class="sskills">
+                                <div ng-repeat="sskill in sskills">
+                                    <div class="item-skills" data-percent="{{ sskill.per }}">{{ sskill.desc }} <span class="printonly"> | {{ sskill.per * 100 }}% </span></div>
+                                </div>
+                                <div class="skills-legend clearfix">
+                                    <div class="legend-left legend">Not so good</div>
+                                    <div class="legend-left legend"><span>Get by</span></div>
+                                    <div class="legend-right legend"><span>Very good</span></div>
+                                    <div class="legend-right legend">Excelent</div>
+                                </div>
+                            </div>
+                        </div>
+                  <!-- LANGUAGES -->
+                      <div class="box">
+                        <h2>{{ titLanguages }}</h2>
+                        <div id="language-skills" ng-repeat="language in languages">
+                          <div class="skill">{{ language.lang }} <span class="printonly"> | {{ language.per }}</span> <div class="icons pull-right"><div style="width:{{ language.per }}" class="icons-red"></div></div></div>
+                        </div>
+                      <!-- HOBBIES -->
+                      <div class="box">
+                        <h2>{{ titHobbies }}</h2>
+                        <div class="hobby" ng-repeat="hobby in hobbies">{{ hobby }}</div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>      
+        
+        
+        
+        <!-- ANGULAR -->     
+        <script src="js/angular.min.js"></script>        
+        <script src="js/app.js"></script>
+        <!-- JQUERY -->
+        <script src="js/jquery.min.js"></script>
+        <!-- BOOTSTRAP -->
+        <script src="js/bootstrap.min.js"></script>
+        <!-- SCRIPTS -->
+        <script src="js/scripts.js"></script>
+        <script src="js/menu.js"></script>
+        
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-74264705-1', 'auto');
+          ga('send', 'pageview');
+
+        </script>
+        
+    </body>
+</html>
