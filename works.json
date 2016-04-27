@@ -1,0 +1,23 @@
+[
+    {
+        title: 'Aroma e Aroma',
+        description: '',
+        skill: 'eCommerce Prestashop',
+        link: 'http://www.aromaearoma.com.br',
+        image: 'img/projects/aroma.png'
+    },
+    {
+        title: 'Sagrado Ócio',
+        description: '',
+        skill: 'Website Wordpress',
+        link: 'http://www.sagradoocio.com.br,
+        image: 'img/projects/sagrado-ocio.png'
+    },
+    {
+        title: 'Patriservice',
+        description: '',
+        skill: 'Website Wordpress',
+        link: 'http://www.patriservice.com.br',
+        image: 'img/projects/patriservice.png'
+    }
+]

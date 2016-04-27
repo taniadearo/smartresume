@@ -1,0 +1,75 @@
+<div class="row">
+    <div class="col-xs-12 col-sm-7">                  
+      <!-- EDUCATION -->
+        <div class="box">
+            <h2>{{ titEducation }}</h2>
+            <ul id="education" class="clearfix">
+                <li ng-repeat="educ in education">
+                    <div class="year pull-left">{{ educ.year }}</div>
+                    <div class="description pull-right">
+                        <h3>{{ educ.tit }}</h3>
+                        <p>{{ educ.desc }}</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+      <!-- EXPERIENCES -->
+      <div class="box">
+        <h2>{{ titExperience }}</h2>
+        <div class="job clearfix" ng-repeat="exp in experience">
+          <div class="col-xs-3">
+            <div class="where">{{ exp.place }}</div>
+            <div class="year">{{ exp.date }}</div>
+          </div>
+          <div class="col-xs-9">
+            <div class="profession">{{ exp.tit }}</div>
+            <div class="description">{{ exp.desc }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-5">                  
+      <!-- TECHNICAL SKILLS -->
+            <div class="box">
+                <h2>{{ titTskills }}</h2>
+                <div class="skills">
+                    <div ng-repeat="tskill in tskills">
+                        <div class="item-skills" data-percent="{{ tskill.per }}">{{ tskill.desc }}<span class="printonly"> | {{ tskill.per * 100 }}% </span></div>
+                    </div>
+                    <div class="skills-legend clearfix">
+                        <div class="legend-left legend">Beginner</div>
+                        <div class="legend-left legend"><span>Proficient</span></div>
+                        <div class="legend-right legend"><span>Expert</span></div>
+                        <div class="legend-right legend">Master</div>
+                    </div>
+                </div>
+            </div>
+        <!-- SOFT SKILLS -->
+            <div class="box">
+                <h2>{{ titSskills }}</h2>
+                <div class="sskills">
+                    <div ng-repeat="sskill in sskills">
+                        <div class="item-skills" data-percent="{{ sskill.per }}">{{ sskill.desc }} <span class="printonly"> | {{ sskill.per * 100 }}% </span></div>
+                    </div>
+                    <div class="skills-legend clearfix">
+                        <div class="legend-left legend">Not so good</div>
+                        <div class="legend-left legend"><span>Get by</span></div>
+                        <div class="legend-right legend"><span>Very good</span></div>
+                        <div class="legend-right legend">Excelent</div>
+                    </div>
+                </div>
+            </div>
+      <!-- LANGUAGES -->
+          <div class="box">
+            <h2>{{ titLanguages }}</h2>
+            <div id="language-skills" ng-repeat="language in languages">
+              <div class="skill">{{ language.lang }} <span class="printonly"> | {{ language.per }}</span> <div class="icons pull-right"><div style="width:{{ language.per }}" class="icons-red"></div></div></div>
+            </div>
+          <!-- HOBBIES -->
+          <div class="box">
+            <h2>{{ titHobbies }}</h2>
+            <div class="hobby" ng-repeat="hobby in hobbies">{{ hobby }}</div>
+          </div>
+        </div>
+    </div>
+</div>
